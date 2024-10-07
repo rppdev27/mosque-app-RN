@@ -1,7 +1,28 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { useFonts } from 'expo-font';
+import {
+    PlusJakartaSans_200ExtraLight,
+    PlusJakartaSans_300Light,
+    PlusJakartaSans_400Regular,
+    PlusJakartaSans_500Medium,
+    PlusJakartaSans_600SemiBold,
+    PlusJakartaSans_700Bold,
+    PlusJakartaSans_800ExtraBold,
+  } from '@expo-google-fonts/plus-jakarta-sans'
 
 const EventScreen = () => {
+
+    let [fontsLoaded] = useFonts({
+        PlusJakartaSans_200ExtraLight,
+        PlusJakartaSans_300Light,
+        PlusJakartaSans_400Regular,
+        PlusJakartaSans_500Medium,
+        PlusJakartaSans_600SemiBold,
+        PlusJakartaSans_700Bold,
+        PlusJakartaSans_800ExtraBold,
+    });
+
     const events = [
         { id: '1', name: 'Islamic Lecture at Mosque', date: 'Oct 8, 2024' },
         { id: '2', name: 'Charity Event for Orphans', date: 'Oct 12, 2024' },
@@ -34,7 +55,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     title: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 'bold',
         marginBottom: 10
     },
@@ -44,11 +65,11 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ddd'
     },
     eventName: {
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: '600'
     },
     eventDate: {
-        fontSize: 14,
+        fontSize: 10,
         color: '#666'
     }
 });

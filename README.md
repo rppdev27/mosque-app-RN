@@ -16,7 +16,6 @@ This project utilizes the following libraries:
 
 - **Custom UI**: This project does not use UI kits like NativeBase or similar libraries. All UI components are created manually.
 
-
 ### Prerequisites
 
 - Node.js

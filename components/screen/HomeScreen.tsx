@@ -11,8 +11,8 @@ const HomeScreen = ({ navigation }) => {
     switch (item.type) {
       case 'header':
         return <UserHeader />;
-      case 'prayer':
-        return <PrayerSchedule />;
+      // case 'prayer':
+      //   return <PrayerSchedule />;
       case 'wisdom':
         return <WisdomScreen />;
       case 'event':

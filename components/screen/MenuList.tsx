@@ -39,7 +39,10 @@ const MenuList = () => {
             data={menus}
             renderItem={({ item }) => (
             <View style={styles.item}>
-                <Text>{item.key}</Text>
+                <TouchableOpacity key={item.id} style={styles.menuItem}>
+                           {item.icon}
+                             <Text style={styles.menuText}>{item.name}</Text>
+                </TouchableOpacity>
             </View>
             )}
             keyExtractor={item => item.key}
@@ -67,23 +70,32 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         padding: 15,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#fff',
         margin: 5,
         borderRadius: 8,
     },
     menuText: {
         marginTop: 10,
-        fontSize: 14,
+        fontSize: 10,
         color: '#333',
         textAlign: 'center',
     },
     item: {
         flex: 1,
         margin: 10,
-        backgroundColor: '#4CAF50',
+        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
         height: 100,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1,
+        elevation: 1,
+        borderRadius: 10
       },
 });
 
