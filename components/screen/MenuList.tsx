@@ -19,7 +19,7 @@ const MenuList = () => {
         );
     };
 
-    const menuRows = chunkArray(menus, 3);
+    // const menuRows = chunkArray(menus, 3);
 
     return (
         // <View style={styles.container}>
