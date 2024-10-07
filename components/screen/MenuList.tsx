@@ -4,8 +4,8 @@ import { Home, Calendar, Image, Watch, Book, User } from 'lucide-react-native'; 
 
 const MenuList = () => {
     const menus = [
-        { key: '1', id: '1', name: 'Home', icon: <Home color="#000" size={24} /> },
-        { key: '2', id: '2', name: 'Events', icon: <Calendar color="#000" size={24} /> },
+        // { key: '1', id: '1', name: 'Home', icon: <Home color="#000" size={24} /> },
+        // { key: '2', id: '2', name: 'Events', icon: <Calendar color="#000" size={24} /> },
         { key: '3', id: '3', name: 'Wallpaper', icon: <Image color="#000" size={24} /> },
         { key: '4', id: '4', name: 'Tasbih', icon: <Watch color="#000" size={24} /> },
         { key: '5', id: '5', name: 'Quran', icon: <Book color="#000" size={24} /> },
@@ -26,7 +26,7 @@ const MenuList = () => {
             </View>
             )}
             keyExtractor={item => item.key}
-            numColumns={3} // Specify number of columns
+            numColumns={2} // Specify number of columns
         />
       </View>
     );
@@ -34,17 +34,19 @@ const MenuList = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 0,
         paddingVertical: 0,
-        margin: 10,
+        marginLeft: 10,
+        marginRight: 10,
         backgroundColor: 'transparent',
         borderRadius: 10
     },
     title: {
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: 'bold',
-        marginBottom: 0,
-        fontFamily: 'PlusJakartaSans_600SemiBold'
+        marginBottom: 10,
+        paddingHorizontal: 20,
+        fontFamily: 'PlusJakartaSans_600SemiBold',
     },
     row: {
         flexDirection: 'row',
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         backgroundColor: '#fff',
-        margin: 5,
+        margin: 0,
         borderRadius: 8,
     },
     menuText: {
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
     },
     item: {
         flex: 1,
-        margin: 10,
+        margin: 5,
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
