@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     image: {
       width: '100%',
-      height: 200,
+      height: 140,
       borderRadius: 10,
       objectFit: 'cover', // Changed from 'contain' to 'cover' for better text overlay
     },
@@ -43,19 +43,19 @@ const styles = StyleSheet.create({
       borderRadius: 10,
     },
     title: {
-      fontSize: 20,
+      fontSize: 15,
       fontWeight: 'bold',
       color: 'white',
       marginBottom: 8,
     },
     time: {
-      fontSize: 32,
+      fontSize: 25,
       fontWeight: 'bold',
       color: 'white',
       marginBottom: 8,
     },
     date: {
-      fontSize: 16,
+      fontSize: 12,
       color: 'white',
     },
   })
