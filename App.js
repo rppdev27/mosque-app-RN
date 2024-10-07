@@ -1,55 +1,52 @@
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View, Button } from 'react-native';
-
-// Context API
-// import { AuthContext } from './context/authContext'
-import { AuthContext } from './context/authContext'
-
-// Style
-import { styles } from './styles';
-
-// Screen
-import LoginScreen from './components/screen/LoginScreen';
-import SignupScreen from './components/screen/SignupScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { View, Text } from 'react-native';
+import { HomeIcon, SettingsIcon, HeartHandshakeIcon } from 'lucide-react-native';
 import HomeScreen from './components/screen/HomeScreen';
-import GuestScreen from './components/screen/GuestScreen';
+import SedekahScreen from './components/screen/SedekahScreen';
 
-
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <AuthContext.Provider value='345'>
-      <NavigationContainer> 
-        <Stack.Navigator initialRouteName='Login'>
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-          >
-          </Stack.Screen>
-          <Stack.Screen
-            name="Signup"
-            component={SignupScreen}
-          >
-          </Stack.Screen>
-          <Stack.Screen 
-            name="Home" 
-            component={HomeScreen} 
-            options={{ 
-              title: 'Beranda' 
-            }}
-          />
-          <Stack.Screen 
-            name="Guest"
-            component={GuestScreen}
-            options={{
-              title: 'Daftar Tamu'
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Beranda"
+        screenOptions={({ route }) => ({
+          tabBarStyle: {
+            paddingTop: 10,
+            paddingBottom: 10,
+            height: 60,
+            backgroundColor: 'white',
+          },
+          tabBarIcon: ({ color, size }) => {
+            let IconComponent;
+            if (route.name === 'Beranda') {
+              IconComponent = HomeIcon;
+            } else if (route.name === 'Signup') {
+              IconComponent = SettingsIcon;
+            } else if (route.name === 'Sedekah') {
+              IconComponent = HeartHandshakeIcon;
+            }
+            return IconComponent ? (
+              <View style={{ padding: 5 }}>
+                <IconComponent color={color} size={size} />
+              </View>
+            ) : null;
+          },
+          tabBarLabel: ({ color }) => (
+            <Text style={{ color, fontSize: 9, textAlign: 'center' }}>
+              {route.name}
+            </Text>
+          ),
+          tabBarActiveTintColor: '#00adef',
+          tabBarInactiveTintColor: 'grey',
+        })}
+      >
+        <Tab.Screen name="Beranda" component={HomeScreen} />
+        <Tab.Screen name="Sedekah" component={SedekahScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
