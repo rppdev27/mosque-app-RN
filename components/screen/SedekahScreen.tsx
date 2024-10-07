@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   footer: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'PlusJakartaSans_400Regular',
     color: '#666',
     textAlign: 'center',

@@ -67,8 +67,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   title: {
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 14,
+    // fontWeight: 'bold',
     marginBottom: 10,
     paddingHorizontal: 20,
     fontFamily: 'PlusJakartaSans_600SemiBold',

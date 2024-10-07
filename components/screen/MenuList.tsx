@@ -1,8 +1,28 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 import { Home, Calendar, Image, Watch, Book, User } from 'lucide-react-native'; // import icons from lucide
-
+import { useFonts } from 'expo-font';
+import {
+  PlusJakartaSans_200ExtraLight,
+  PlusJakartaSans_300Light,
+  PlusJakartaSans_400Regular,
+  PlusJakartaSans_500Medium,
+  PlusJakartaSans_600SemiBold,
+  PlusJakartaSans_700Bold,
+  PlusJakartaSans_800ExtraBold,
+} from '@expo-google-fonts/plus-jakarta-sans';
 const MenuList = () => {
+
+    let [fontsLoaded] = useFonts({
+        PlusJakartaSans_200ExtraLight,
+        PlusJakartaSans_300Light,
+        PlusJakartaSans_400Regular,
+        PlusJakartaSans_500Medium,
+        PlusJakartaSans_600SemiBold,
+        PlusJakartaSans_700Bold,
+        PlusJakartaSans_800ExtraBold,
+    });
+
     const menus = [
         // { key: '1', id: '1', name: 'Home', icon: <Home color="#000" size={24} /> },
         // { key: '2', id: '2', name: 'Events', icon: <Calendar color="#000" size={24} /> },
@@ -39,13 +59,14 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginRight: 10,
         backgroundColor: 'transparent',
-        borderRadius: 10
+        borderRadius: 10,
+        paddingBottom: 15
     },
     title: {
-        fontSize: 16,
-        fontWeight: 'bold',
+        fontSize: 14,
+        // fontWeight: 'bold',
         marginBottom: 10,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         fontFamily: 'PlusJakartaSans_600SemiBold',
     },
     row: {
