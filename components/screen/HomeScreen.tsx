@@ -1,17 +1,23 @@
-import { View, Text, Button } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, Button, SafeAreaView, Platform, StatusBar, Image, StyleSheet, ImageBackground } from 'react-native'
+import PrayerSchedule from '../PrayerSchedule';
+import UserHeader from './UserHeader';
 
 const HomeScreen = ({ navigation }) => {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-            title="Details"
-            onPress={() => navigation.navigate('Guest')}
-        />
-      </View>
+      <SafeAreaView style={{ flex: 1, alignItems: 'center', justifyContent: 'space-between' }}>
+          <View style={{ flex: 1, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0, alignContent: 'center' }}>
+
+          {/* Mini Header, provide user city location, name, profile */}
+          <UserHeader/>
+          
+          {/* (Next) Pray Schedule with image background, large */}
+          <PrayerSchedule/>
+
+        </View>
+      </SafeAreaView>
     );
   };
+
+
 
 export default HomeScreen

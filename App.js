@@ -44,7 +44,13 @@ export default function App() {
           tabBarInactiveTintColor: 'grey',
         })}
       >
-        <Tab.Screen name="Beranda" component={HomeScreen} />
+        <Tab.Screen 
+          name="Beranda" 
+          component={HomeScreen} 
+          options={{
+            headerShown: false
+          }}
+        />
         <Tab.Screen name="Sedekah" component={SedekahScreen} />
       </Tab.Navigator>
     </NavigationContainer>
