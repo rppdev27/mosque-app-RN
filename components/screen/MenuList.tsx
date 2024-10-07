@@ -12,29 +12,9 @@ const MenuList = () => {
         { key: '6', id: '6', name: 'Profile', icon: <User color="#000" size={24} /> },
     ];
 
-    // Helper function to chunk the array into rows
-    const chunkArray = (arr, size) => {
-        return Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-            arr.slice(i * size, i * size + size)
-        );
-    };
-
-    // const menuRows = chunkArray(menus, 3);
-
     return (
-        // <View style={styles.container}>
-        //     {menuRows.map((row, rowIndex) => (
-        //         <View key={rowIndex} style={styles.row}>
-        //             {row.map(menu => (
-        //                 <TouchableOpacity key={menu.id} style={styles.menuItem}>
-        //                     {menu.icon}
-        //                     <Text style={styles.menuText}>{menu.name}</Text>
-        //                 </TouchableOpacity>
-        //             ))}
-        //         </View>
-        //     ))}
-        // </View>
         <View style={styles.container}>
+            <Text style={styles.title}>Useful App</Text>
             <FlatList
             data={menus}
             renderItem={({ item }) => (
@@ -55,11 +35,16 @@ const MenuList = () => {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 10,
-        paddingVertical: 10,
+        paddingVertical: 0,
         margin: 10,
-        marginTop: 10,
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         borderRadius: 10
+    },
+    title: {
+        fontSize: 12,
+        fontWeight: 'bold',
+        marginBottom: 0,
+        fontFamily: 'PlusJakartaSans_600SemiBold'
     },
     row: {
         flexDirection: 'row',
@@ -67,9 +52,9 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     menuItem: {
-        flex: 1,
+        flex: 0,
         alignItems: 'center',
-        padding: 15,
+        padding: 10,
         backgroundColor: '#fff',
         margin: 5,
         borderRadius: 8,

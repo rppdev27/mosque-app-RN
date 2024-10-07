@@ -49,24 +49,30 @@ const EventScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20,
-        backgroundColor: '#fff',
-        margin: 10,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 20,
+        // backgroundColor: '#fff',
+        backgroundColor: 'transparent',
+        margin: 0,
         borderRadius: 10
     },
     title: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 'bold',
-        marginBottom: 10
+        marginBottom: 0,
+        fontFamily: 'PlusJakartaSans_600SemiBold'
     },
     eventItem: {
         padding: 10,
         borderBottomWidth: 1,
-        borderBottomColor: '#ddd'
+        borderBottomColor: '#ddd',
+        fontFamily: 'PlusJakartaSans_600SemiBold'
     },
     eventName: {
         fontSize: 12,
-        fontWeight: '600'
+        fontWeight: '600',
+        fontFamily: 'PlusJakartaSans_600SemiBold'
     },
     eventDate: {
         fontSize: 10,
