@@ -2,6 +2,8 @@
 
 Mosque App - by Ryandev.site
 
+This repository is dedicated to documenting the development of my Mosque App project. It serves as a boilerplate that you can fork or clone to use for your own projects related to mosque management applications. The codebase includes essential features and functionalities necessary for building such an app, making it easier for developers to get started quickly.
+
 ## Intro
 
 This project utilizes the following libraries:
